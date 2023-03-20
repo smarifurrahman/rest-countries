@@ -10,14 +10,27 @@ const displayCountries = countries => {
     countriesContainer.innerHTML = countriesHTML.join(' ');
 }
 
+// option 1
 const getCountryHTML = country => {
+    const {name, flags, capital} = country;
     return `
     <div class="country">
-        <h3>${country.name.common}</h3>
-        <img src="${country.flags.png}">
-        <h3>Capital: ${country.capital ? country.capital : 'Not Found'}</h3>
+        <h3>${name.common}</h3>
+        <img src="${flags.png}">
+        <h3>Capital: ${capital ? capital : 'Not Found'}</h3>
     </div>
     `;
 }
+
+// original
+// const getCountryHTML = country => {
+//     return `
+//     <div class="country">
+//         <h3>${country.name.common}</h3>
+//         <img src="${country.flags.png}">
+//         <h3>Capital: ${country.capital ? country.capital : 'Not Found'}</h3>
+//     </div>
+//     `;
+// }
 
 loadCountries();
